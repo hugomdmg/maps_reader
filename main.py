@@ -44,11 +44,12 @@ class Maps:
         plt.show()
 
 
-files = ['./lidar_data/earth.tif',
+files = [
+         './lidar_data/Mercury_Messenger_665m.tif',
+         './lidar_data/Venus_Magellan_2025m.tif',
+         './lidar_data/earth.tif',
          './lidar_data/Lunar_DEM_118m.tif',
          './lidar_data/Europa_Voyager_GalileoSSI_500m.tif',
-         './lidar_data/Venus_Magellan_2025m.tif',
-         './lidar_data/Mercury_Messenger_665m.tif'
          ]
 lidar = ['./lidar_data/PNOA_penalara.csv',
          './lidar_data/PNOA_matalascanas.csv',
@@ -59,7 +60,7 @@ menuOption = int(input('1: Print map .tif\n2: Print map .csv\n3: Export .tif to 
 if menuOption == 1:
     print('=============')
     print('Choose planet:')
-    option = int(input('1: Earth\n2: Moon\n3: Europa\n4: Venus\n')) - 1
+    option = int(input('\n1: Mercury\n2: Venus\n3: Earth\n4: Moon\n5: Europa\n')) - 1
     Maps.printPlanet(files[option])
 
 if menuOption == 2:
@@ -77,6 +78,6 @@ if menuOption == 2:
 if menuOption == 3:
     print('=============')
     print('Choose data:\n')
-    option = int(input('1: Earth\n2: Moon\n3: Europa\n4: Venus\n')) - 1
-    Reader.exportCsv(files[option], 40)
+    option = int(input('1: Mercury\n2: Venus\n3: Earth\n4: Moon\n')) - 1
+    Reader.exportCsv(files[option], 20)
 
